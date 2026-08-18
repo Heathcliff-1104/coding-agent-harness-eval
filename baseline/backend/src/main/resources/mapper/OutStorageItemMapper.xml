@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.koolearn.bms.mapper.OutStorageItemMapper">
+    <!-- 修复：只保留表真实字段，修正 batch → batch_no、num → out_num -->
+    <insert id="insertBatch">
+        insert into tb_out_storage_item(outbound_id,material_id,material_code,batch_no,out_num)
+        values
+        <foreach collection="list" item="item" separator=",">
+            (#{item.outboundId},#{item.materialId},#{item.materialCode},#{item.batchNo},#{item.outNum})
+        </foreach>
+    </insert>
+
+    <select id="selectByOutboundId" resultType="com.koolearn.bms.entity.OutStorageItem">
+        select * from tb_out_storage_item where outbound_id = #{outboundId}
+    </select>
+
+    <delete id="deleteByOutboundId">
+        delete from tb_out_storage_item where outbound_id = #{outboundId}
+    </delete>
+</mapper>

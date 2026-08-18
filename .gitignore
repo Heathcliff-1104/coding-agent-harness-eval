@@ -1,0 +1,42 @@
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Java / Maven
+**/target/
+**/.mvn/wrapper/maven-wrapper.jar
+.m2/
+
+# Node
+**/node_modules/
+**/dist/
+**/.npm-cache/
+.pnpm-store/
+npm-debug.log*
+pnpm-debug.log*
+
+# Runtime and databases
+*.log
+logs/
+*.db
+*.sqlite*
+*.dump
+*.bak
+backups/
+
+# Large agent traces and caches
+trajectory.json
+trajectory.jsonl
+cache/
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+

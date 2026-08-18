@@ -1,0 +1,7 @@
+77891ad feat: core material flows, schema, auth hardening, exports, BOM/CIS/DingTalk demo adapters
+6d7f022 feat: wire batch audit, outbound confirm/reject UI, stats dimensions, stagnant amount, last-login column; add IMPLEMENTATION_STATUS.md
+4c4fc8b feat: batch user import (Excel) via /user/import + frontend upload; doc update
+355ec8e feat: close remaining audit gaps - inbound date/material filters, realtime uniqueness check, low-stock notify
+244de7d feat: close frontend audit gaps - material management page, returnReason, outRecord keyword, order exports
+9fda71e security: close backend audit findings (C3/H1-H5/M2/M9/M12/M13 + low items)
+240c420 test: add Result + BackupController.extractDbName unit tests; fix Knife4j path-match on Boot 2.7

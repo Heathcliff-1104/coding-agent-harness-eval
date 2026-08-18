@@ -1,0 +1,4 @@
+rank,candidate,total,requirements_45,correctness_security_25,engineering_15,runtime_ui_10,process_reproducibility_5,hidden_tests_passed,hidden_tests_total,self_tests_passed
+1,DeepSeek Harness,88,42,22,12,9,3,12,13,32
+2,Pi,86,40,22,13,8,3,12,13,40
+3,mini-swe-agent,62,29,16,9,4,4,9,13,10

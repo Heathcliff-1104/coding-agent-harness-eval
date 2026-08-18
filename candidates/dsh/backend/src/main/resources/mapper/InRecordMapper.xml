@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.koolearn.bms.mapper.InRecordMapper">
+
+    <select id="selectByDate" resultType="com.koolearn.bms.entity.InRecord">
+        select * from in_record where in_time between #{start} and #{end}
+    </select>
+
+    <select id="selectPageByCondition" resultType="com.koolearn.bms.entity.InRecord">
+        select * from in_record
+        <where>
+            <if test="start != null and start != '' and end != null and end != ''">
+                AND in_time BETWEEN #{start} AND #{end}
+            </if>
+            <if test="billNo != null and billNo != ''">
+                AND bill_no LIKE CONCAT('%', #{billNo}, '%')
+            </if>
+            <if test="keyword != null and keyword != ''">
+                AND (
+                    bill_no LIKE CONCAT('%', #{keyword}, '%')
+                    OR batch_no LIKE CONCAT('%', #{keyword}, '%')
+                )
+            </if>
+        </where>
+        ORDER BY in_time DESC
+    </select>
+</mapper>

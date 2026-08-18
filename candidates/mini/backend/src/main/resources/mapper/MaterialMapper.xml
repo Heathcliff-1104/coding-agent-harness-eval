@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.koolearn.bms.mapper.MaterialMapper">
+    <resultMap id="BaseResultMap" type="com.koolearn.bms.entity.Material">
+        <id column="id" property="id"/>
+        <result column="material_code" property="materialCode"/>
+        <result column="material_name" property="materialName"/>
+        <result column="package_type" property="packageType"/>
+        <result column="value_data" property="valueData"/>
+        <result column="spec_model" property="specModel"/>
+        <result column="warehouse_code" property="warehouseCode"/>
+        <result column="location_no" property="locationNo"/>
+        <result column="remark" property="remark"/>
+        <result column="stock" property="stock"/>
+        <result column="version" property="version"/>
+        <result column="lock_stock" property="lockStock"/>
+        <result column="min_stock" property="minStock"/>
+        <result column="max_stock" property="maxStock"/>
+        <result column="stagnation_days" property="stagnationDays"/>
+        <result column="material_cost" property="materialCost"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+    </resultMap>
+
+    <select id="selectPageByCondition" resultMap="BaseResultMap">
+        select * from tb_material
+        <where>
+            <if test="keyword != null and keyword != ''">
+                AND (
+                    material_code LIKE CONCAT('%', #{keyword}, '%')
+                    OR material_name LIKE CONCAT('%', #{keyword}, '%')
+                    OR spec_model LIKE CONCAT('%', #{keyword}, '%')
+                    OR package_type LIKE CONCAT('%', #{keyword}, '%')
+                )
+            </if>
+            <if test="code != null and code != ''">
+                AND material_code LIKE CONCAT('%', #{code}, '%')
+            </if>
+            <if test="name != null and name != ''">
+                AND material_name LIKE CONCAT('%', #{name}, '%')
+            </if>
+            <if test="warehouse != null and warehouse != ''">
+                AND warehouse_code = #{warehouse}
+            </if>
+            <if test="packageType != null and packageType != ''">
+                AND package_type = #{packageType}
+            </if>
+        </where>
+        <if test="keyword != null and keyword != ''">
+            ORDER BY
+                CASE WHEN material_code = #{keyword} OR material_name = #{keyword} THEN 1
+                     WHEN material_code LIKE CONCAT(#{keyword}, '%') OR material_name LIKE CONCAT(#{keyword}, '%') THEN 2
+                     ELSE 3 END
+        </if>
+    </select>
+
+    <!-- 原子增加库存 乐观锁 -->
+    <update id="atomicAddStock">
+        UPDATE tb_material
+        SET stock = stock + #{num}, version = version + 1
+        WHERE id = #{mid} AND version = #{ver}
+    </update>
+
+    <!-- 原子扣减库存 乐观锁+库存充足校验 -->
+    <update id="atomicSubStock">
+        UPDATE tb_material
+        SET stock = stock - #{num}, version = version + 1
+        WHERE id = #{mid} AND version = #{ver} AND stock >= #{num}
+    </update>
+
+    <!-- 锁定占用库存（提交草稿/待审批占用） -->
+    <update id="lockStock">
+        UPDATE tb_material
+        SET lock_stock = lock_stock + #{num}, version = version + 1
+        WHERE id = #{mid} AND version = #{ver}
+    </update>
+
+    <!-- 释放锁定库存（驳回/取消单据） -->
+    <update id="unLockStock">
+        UPDATE tb_material
+        SET lock_stock = lock_stock - #{num}, version = version + 1
+        WHERE id = #{mid} AND version = #{ver} AND lock_stock >= #{num}
+    </update>
+</mapper>

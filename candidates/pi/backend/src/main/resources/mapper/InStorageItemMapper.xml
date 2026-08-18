@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.koolearn.bms.mapper.InStorageItemMapper">
+    <insert id="insertBatch">
+        insert into in_storage_item(inbound_id, material_id, material_code, num, batch_no, location_no)
+        values
+        <foreach collection="list" item="item" separator=",">
+            (#{item.inboundId},#{item.materialId},#{item.materialCode},#{item.num},#{item.batchNo},#{item.locationNo})
+        </foreach>
+    </insert>
+
+    <select id="selectByInboundId" resultType="com.koolearn.bms.entity.InStorageItem">
+        select * from in_storage_item where inbound_id = #{inboundId}
+    </select>
+
+    <delete id="deleteByInboundId">
+        delete from in_storage_item where inbound_id = #{inboundId}
+    </delete>
+</mapper>

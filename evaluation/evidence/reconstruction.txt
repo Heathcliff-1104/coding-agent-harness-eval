@@ -1,0 +1,18 @@
+=== Verification copies ===
+baseline head=3bf29e545f9461128ea4d3c589f501ad374f59c1
+baseline tree=2ef85c3dea5565181cc880848cd7a0d71df007eb
+baseline status-lines=0
+mini head=65ee84e78844018ca10e3062415e2d691ca87384
+mini tree=88f010426c47a6031d8e9cdbe754c8688a4580c8
+mini status-lines=0
+dsh head=240c420664ce3354c798c46a74aa9843ad221af3
+dsh tree=69e4527eeb75b47bdc259211ea42bd717da4a5ce
+dsh status-lines=0
+pi head=4a59164c9eceae5ab2b6828b30cd4a5df4be72e5
+pi tree=5a86e7f239cc98ecbd8ae3d9ee4d7e3b474882c9
+pi status-lines=0
+
+=== Original versus restored tree hashes ===
+mini original=88f010426c47a6031d8e9cdbe754c8688a4580c8 restored=88f010426c47a6031d8e9cdbe754c8688a4580c8 match=YES
+dsh original=69e4527eeb75b47bdc259211ea42bd717da4a5ce restored=69e4527eeb75b47bdc259211ea42bd717da4a5ce match=YES
+pi original=5a86e7f239cc98ecbd8ae3d9ee4d7e3b474882c9 restored=5a86e7f239cc98ecbd8ae3d9ee4d7e3b474882c9 match=YES

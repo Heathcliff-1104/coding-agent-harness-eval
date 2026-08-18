@@ -1,0 +1,54 @@
+Develop this incomplete material management system as far as reasonably possible against requirements/requirements.md.
+
+Operate autonomously until the implementation is complete or genuinely blocked. Do not stop after fixing only one issue.
+
+Scope and safety boundaries:
+- Work only inside the current repository.
+- Treat requirements/requirements.md as read-only.
+- Do not read sibling workspaces, other agents' results, the baseline repository, or files under /mnt/d/agent-lab.
+- Do not modify Pi configuration, agent definitions, harness source, credentials, or anything outside the current repository.
+- Do not delete, replace, reinitialize, or relocate the repository's .git directory.
+- Do not use sudo or install system packages.
+- Project dependency installation is allowed.
+- Internet access is allowed.
+- Clear checkpoint Git commits are allowed.
+
+Use the official Pi subagent extension and its role-based workflow:
+1. Begin with one parallel subagent call containing four scout tasks:
+   - requirements completeness and missing features;
+   - backend, database schema, security, and core business flows;
+   - frontend completeness and frontend-backend API mismatches;
+   - build, tests, reproducibility, placeholders, mocks, and likely failures.
+2. Give the consolidated scout findings to the planner agent.
+3. Use the worker agent to implement the prioritized plan.
+4. Use the reviewer agent to independently review the resulting code for correctness, security, requirement coverage, regressions, and missing tests.
+5. Use the worker agent once more to address actionable review findings.
+6. The main agent remains responsible for integration, additional fixes inside the repository, final tests, and reviewing the complete Git diff.
+
+Use no more than eight subagent executions in total. Keep parallel agents read-only unless they are workers. Never run multiple writing workers concurrently.
+
+Priorities:
+- reproducible builds and a usable database/schema baseline;
+- authentication, authorization, privilege escalation, secrets, and input validation;
+- login, inbound, outbound, inventory, users, materials, and audit flows;
+- frontend-backend API consistency;
+- automated regression tests;
+- reports, exports, permissions, backups, logs, alerts, BOM, CIS, and DingTalk functionality where requirements provide enough information.
+
+For unavailable external services, implement configurable adapters and deterministic local test or mock modes. Clearly document blockers instead of claiming live integration works.
+
+Run relevant backend tests and frontend production builds. Fix failures caused by your changes. Do not weaken tests or alter requirements to match the implementation.
+
+Maintain IMPLEMENTATION_STATUS.md with:
+- completed requirement items;
+- remaining items;
+- blockers and assumptions;
+- exact test/build commands;
+- actual results;
+- known limitations.
+
+Before finishing:
+- inspect git status and the complete diff;
+- ensure no credentials or generated dependency/build directories are committed;
+- leave the repository in a coherent, reviewable state;
+- provide a concise final summary with tests and remaining limitations.

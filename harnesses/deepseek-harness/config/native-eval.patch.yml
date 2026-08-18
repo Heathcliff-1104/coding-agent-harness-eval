@@ -1,0 +1,8 @@
+- id: workflow-worker-thread
+  config:
+    maxConcurrentAgents: 10
+    maxTotalAgents: 40
+- id: tool-ralph
+  config:
+    subagentProvider: spawn
+    maxRounds: 24

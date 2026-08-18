@@ -1,0 +1,11 @@
+CANDIDATE=dsh
+COMMIT=240c420664ce3354c798c46a74aa9843ad221af3
+TREE=69e4527eeb75b47bdc259211ea42bd717da4a5ce
+TEST_SHA256=1e5af17fec98a2a8fe9282ee5435fd62cd1a151450bc7c19e4d3cbc2089321dd
+STARTED=2026-08-18T19:08:18+08:00
+EXIT=0
+SECONDS=74
+FINISHED=2026-08-18T19:09:32+08:00
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m5[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 30.901 s - in com.koolearn.bms.acceptance.[1mExternalInventoryAcceptanceTest[m
+[[1;34mINFO[m] [1;32mTests run: 5, Failures: 0, Errors: 0, Skipped: 0[m
+[[1;34mINFO[m] [1;32mBUILD SUCCESS[m

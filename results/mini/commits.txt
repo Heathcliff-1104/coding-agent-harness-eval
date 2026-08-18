@@ -1,0 +1,5 @@
+65ee84e (HEAD -> eval/mini-fix-01) feat: wire backup strategy/records and syslog export in frontend
+949a8b8 docs: update implementation status with verified build results
+4b2419a feat: implement security fixes, core flows, schema, exports, and adapters
+3f6a144 docs: add mini agent audit report
+2d1f4c3 fix: prevent privilege escalation during registration

@@ -1,0 +1,206 @@
+candidate     tests failures   errors  skipped    backend   frontend
+baseline          1        0        0        0          0          1
+mini             10        0        0        0          0          0
+dsh              32        0        0        0          0          0
+pi               40        0        0        0          0          0
+
+=== Test source files ===
+-- baseline --
+java/com/koolearn/bms/BmsApplicationTests.java
+frontend test-like files:
+-- mini --
+java/com/koolearn/bms/BmsApplicationTests.java
+java/com/koolearn/bms/InboundOutboundFlowTest.java
+java/com/koolearn/bms/RegistrationRoleRegressionTest.java
+java/com/koolearn/bms/SecurityFlowTest.java
+resources/schema.sql
+frontend test-like files:
+-- dsh --
+java/com/koolearn/bms/BmsApplicationTests.java
+java/com/koolearn/bms/config/LoginRateLimiterTest.java
+java/com/koolearn/bms/controller/BackupControllerTest.java
+java/com/koolearn/bms/flow/AuthIntegrationTest.java
+java/com/koolearn/bms/flow/FeatureIntegrationTest.java
+java/com/koolearn/bms/flow/SecurityFlowIntegrationTest.java
+java/com/koolearn/bms/flow/StockFlowIntegrationTest.java
+java/com/koolearn/bms/test/H2DateFunctions.java
+java/com/koolearn/bms/util/CaptchaUtilTest.java
+java/com/koolearn/bms/util/JwtUtilTest.java
+java/com/koolearn/bms/util/PasswordPolicyTest.java
+java/com/koolearn/bms/util/ResultTest.java
+resources/application-test.properties
+resources/schema-h2.sql
+frontend test-like files:
+-- pi --
+java/com/koolearn/bms/BmsApplicationTests.java
+java/com/koolearn/bms/service/BomMatchTest.java
+java/com/koolearn/bms/service/CallbackAndExportTest.java
+java/com/koolearn/bms/service/EngineerDataScopeTest.java
+java/com/koolearn/bms/service/InboundConfirmStockTest.java
+java/com/koolearn/bms/service/OutboundLockConfirmRejectTest.java
+java/com/koolearn/bms/service/RegisterPrivilegeTest.java
+java/com/koolearn/bms/service/RolePermissionTest.java
+java/com/koolearn/bms/service/SecurityRegressionTest.java
+java/com/koolearn/bms/service/StockAlertScanTest.java
+resources/application-test.properties
+frontend test-like files:
+
+=== Baseline frontend build failure ===
+npm ERR! Missing script: "build"
+npm ERR! 
+npm ERR! To see a list of scripts, run:
+npm ERR!   npm run
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/evaluator/.npm/_logs/2026-08-18T09_17_06_240Z-debug-0.log
+
+=== Candidate frontend build tails ===
+-- mini --
+- Using dynamic import() to code-split the application
+- Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+[31m[INVALID_ANNOTATION] [0mA comment "/* #__PURE__ */" in "node_modules/@vueuse/core/dist/index.js" contains an annotation that Rolldown cannot interpret due to the position of the comment.
+      [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m node_modules/@vueuse/core/dist/index.js:5780:23 [38;5;246m][0m
+      [38;5;246m│[0m
+ [38;5;246m5780 │[0m [38;5;249mc[0m[38;5;249mo[0m[38;5;249mn[0m[38;5;249ms[0m[38;5;249mt[0m[38;5;249m [0m[38;5;249md[0m[38;5;249me[0m[38;5;249mf[0m[38;5;249ma[0m[38;5;249mu[0m[38;5;249ml[0m[38;5;249mt[0m[38;5;249mS[0m[38;5;249mt[0m[38;5;249ma[0m[38;5;249mt[0m[38;5;249me[0m[38;5;249m [0m[38;5;249m=[0m[38;5;249m [0m[38;5;249m([0m/* #__PURE__ */[38;5;249m [0m[38;5;249m{[0m
+ [38;5;240m     │[0m                       ───────┬───────  
+ [38;5;240m     │[0m                              ╰───────── comment ignored due to position
+ [38;5;240m     │[0m 
+ [38;5;240m     │[0m [38;5;115mHelp[0m: For more information on how to use pure annotations correctly, check the documentation: https://rolldown.rs/in-depth/dead-code-elimination#pure
+[38;5;246m──────╯[0m
+
+[33m[PLUGIN_TIMINGS] [0mYour build spent significant time in plugins. Here is a breakdown:
+  - rolldown:vite-resolve (58%)
+  - vite:css-post (21%)
+  - vite:vue (16%)
+See https://rolldown.rs/options/checks#plugintimings for more details.
+
+✓ built in 9.84s
+-- dsh --
+- Using dynamic import() to code-split the application
+- Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+[31m[INVALID_ANNOTATION] [0mA comment "/* #__PURE__ */" in "node_modules/@vueuse/core/dist/index.js" contains an annotation that Rolldown cannot interpret due to the position of the comment.
+      [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m node_modules/@vueuse/core/dist/index.js:5780:23 [38;5;246m][0m
+      [38;5;246m│[0m
+ [38;5;246m5780 │[0m [38;5;249mc[0m[38;5;249mo[0m[38;5;249mn[0m[38;5;249ms[0m[38;5;249mt[0m[38;5;249m [0m[38;5;249md[0m[38;5;249me[0m[38;5;249mf[0m[38;5;249ma[0m[38;5;249mu[0m[38;5;249ml[0m[38;5;249mt[0m[38;5;249mS[0m[38;5;249mt[0m[38;5;249ma[0m[38;5;249mt[0m[38;5;249me[0m[38;5;249m [0m[38;5;249m=[0m[38;5;249m [0m[38;5;249m([0m/* #__PURE__ */[38;5;249m [0m[38;5;249m{[0m
+ [38;5;240m     │[0m                       ───────┬───────  
+ [38;5;240m     │[0m                              ╰───────── comment ignored due to position
+ [38;5;240m     │[0m 
+ [38;5;240m     │[0m [38;5;115mHelp[0m: For more information on how to use pure annotations correctly, check the documentation: https://rolldown.rs/in-depth/dead-code-elimination#pure
+[38;5;246m──────╯[0m
+
+[33m[PLUGIN_TIMINGS] [0mYour build spent significant time in plugins. Here is a breakdown:
+  - rolldown:vite-resolve (60%)
+  - vite:css-post (21%)
+  - vite:vue (14%)
+See https://rolldown.rs/options/checks#plugintimings for more details.
+
+✓ built in 10.54s
+-- pi --
+- Using dynamic import() to code-split the application
+- Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+[31m[INVALID_ANNOTATION] [0mA comment "/* #__PURE__ */" in "node_modules/@vueuse/core/dist/index.js" contains an annotation that Rolldown cannot interpret due to the position of the comment.
+      [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m node_modules/@vueuse/core/dist/index.js:5780:23 [38;5;246m][0m
+      [38;5;246m│[0m
+ [38;5;246m5780 │[0m [38;5;249mc[0m[38;5;249mo[0m[38;5;249mn[0m[38;5;249ms[0m[38;5;249mt[0m[38;5;249m [0m[38;5;249md[0m[38;5;249me[0m[38;5;249mf[0m[38;5;249ma[0m[38;5;249mu[0m[38;5;249ml[0m[38;5;249mt[0m[38;5;249mS[0m[38;5;249mt[0m[38;5;249ma[0m[38;5;249mt[0m[38;5;249me[0m[38;5;249m [0m[38;5;249m=[0m[38;5;249m [0m[38;5;249m([0m/* #__PURE__ */[38;5;249m [0m[38;5;249m{[0m
+ [38;5;240m     │[0m                       ───────┬───────  
+ [38;5;240m     │[0m                              ╰───────── comment ignored due to position
+ [38;5;240m     │[0m 
+ [38;5;240m     │[0m [38;5;115mHelp[0m: For more information on how to use pure annotations correctly, check the documentation: https://rolldown.rs/in-depth/dead-code-elimination#pure
+[38;5;246m──────╯[0m
+
+[33m[PLUGIN_TIMINGS] [0mYour build spent significant time in plugins. Here is a breakdown:
+  - rolldown:vite-resolve (62%)
+  - vite:css-post (18%)
+  - vite:vue (15%)
+See https://rolldown.rs/options/checks#plugintimings for more details.
+
+✓ built in 10.07s
+
+=== Maven summary tails ===
+-- baseline --
+2026-08-18 17:15:13 [main] INFO  s.d.s.w.r.o.CachingOperationNameGenerator - Generating unique operation named: pageUsingGET_6
+2026-08-18 17:15:13 [main] INFO  com.koolearn.bms.BmsApplicationTests - Started BmsApplicationTests in 20.94 seconds (JVM running for 25.237)
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 25.524 s - in com.koolearn.bms.BmsApplicationTests
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- jar:3.2.2:jar (default-jar) @ bms ---
+[INFO] Building jar: /workspace/material-system/agent-eval/verification/run-01/baseline/backend/target/bms-1.0.0.jar
+[INFO] 
+[INFO] --- spring-boot:2.7.15:repackage (repackage) @ bms ---
+[INFO] Replacing main artifact with repackaged archive
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  01:37 min
+[INFO] Finished at: 2026-08-18T17:15:35+08:00
+[INFO] ------------------------------------------------------------------------
+-- mini --
+2026-08-18 17:19:05 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown completed.
+2026-08-18 17:19:05 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Shutdown initiated...
+2026-08-18 17:19:05 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Shutdown completed.
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- jar:3.2.2:jar (default-jar) @ bms ---
+[INFO] Building jar: /workspace/material-system/agent-eval/verification/run-01/mini/backend/target/bms-1.0.0.jar
+[INFO] 
+[INFO] --- spring-boot:2.7.15:repackage (repackage) @ bms ---
+[INFO] Replacing main artifact with repackaged archive
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  02:20 min
+[INFO] Finished at: 2026-08-18T17:19:28+08:00
+[INFO] ------------------------------------------------------------------------
+-- dsh --
+2026-08-18 17:23:03 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-08-18 17:23:03 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown initiated...
+2026-08-18 17:23:03 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown completed.
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 32, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- jar:3.2.2:jar (default-jar) @ bms ---
+[INFO] Building jar: /workspace/material-system/agent-eval/verification/run-01/dsh/backend/target/bms-1.0.0.jar
+[INFO] 
+[INFO] --- spring-boot:2.7.15:repackage (repackage) @ bms ---
+[INFO] Replacing main artifact with repackaged archive
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  02:12 min
+[INFO] Finished at: 2026-08-18T17:23:26+08:00
+[INFO] ------------------------------------------------------------------------
+-- pi --
+2026-08-18 17:27:22 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-08-18 17:27:22 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown initiated...
+2026-08-18 17:27:22 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-2 - Shutdown completed.
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 40, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- jar:3.2.2:jar (default-jar) @ bms ---
+[INFO] Building jar: /workspace/material-system/agent-eval/verification/run-01/pi/backend/target/bms-1.0.0.jar
+[INFO] 
+[INFO] --- spring-boot:2.7.15:repackage (repackage) @ bms ---
+[INFO] Replacing main artifact with repackaged archive
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  02:32 min
+[INFO] Finished at: 2026-08-18T17:27:46+08:00
+[INFO] ------------------------------------------------------------------------

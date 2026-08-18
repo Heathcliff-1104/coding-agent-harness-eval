@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.koolearn.bms.mapper.StockFlowMapper">
+
+    <sql id="flowFilters">
+        <where>
+            <if test="keyword != null and keyword != ''">
+                AND (bill_no LIKE CONCAT('%', #{keyword}, '%') OR batch_no LIKE CONCAT('%', #{keyword}, '%'))
+            </if>
+            <if test="materialCode != null and materialCode != ''">
+                AND material_id IN (SELECT id FROM tb_material WHERE material_code LIKE CONCAT('%', #{materialCode}, '%'))
+            </if>
+            <if test="materialId != null">
+                AND material_id = #{materialId}
+            </if>
+            <if test="startTime != null and startTime != ''">
+                AND op_time &gt;= #{startTime}
+            </if>
+            <if test="endTime != null and endTime != ''">
+                AND op_time &lt;= #{endTime}
+            </if>
+        </where>
+    </sql>
+
+    <select id="selectFlowPage" resultType="com.koolearn.bms.dto.StockFlowDTO">
+        SELECT * FROM (
+            SELECT 'in' AS recordType, r.bill_no AS billNo, r.material_id AS materialId, r.batch_no AS batchNo,
+                   r.in_num AS num, r.in_user AS operator, r.in_time AS opTime
+            FROM in_record r
+            <include refid="flowFilters"/>
+            UNION ALL
+            SELECT 'out' AS recordType, r.outbound_code AS billNo, r.material_id AS materialId, r.batch_no AS batchNo,
+                   r.out_num AS num, r.out_user AS operator, r.out_time AS opTime
+            FROM tb_out_record r
+            <include refid="flowFilters"/>
+        ) t
+        <if test="type == 'in' or type == 'out'">
+            WHERE t.recordType = #{type}
+        </if>
+        ORDER BY opTime DESC
+    </select>
+
+    <select id="selectFlowAll" resultType="com.koolearn.bms.dto.StockFlowDTO">
+        SELECT * FROM (
+            SELECT 'in' AS recordType, r.bill_no AS billNo, r.material_id AS materialId, r.batch_no AS batchNo,
+                   r.in_num AS num, r.in_user AS operator, r.in_time AS opTime
+            FROM in_record r
+            <include refid="flowFilters"/>
+            UNION ALL
+            SELECT 'out' AS recordType, r.outbound_code AS billNo, r.material_id AS materialId, r.batch_no AS batchNo,
+                   r.out_num AS num, r.out_user AS operator, r.out_time AS opTime
+            FROM tb_out_record r
+            <include refid="flowFilters"/>
+        ) t
+        <if test="type == 'in' or type == 'out'">
+            WHERE t.recordType = #{type}
+        </if>
+        ORDER BY opTime DESC
+    </select>
+</mapper>

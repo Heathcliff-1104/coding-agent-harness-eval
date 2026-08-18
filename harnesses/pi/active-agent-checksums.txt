@@ -1,0 +1,4 @@
+9caafd627eca406e273c7e5643064f8b9758ebeede13a1a9736f336eb7171ad3  /mnt/d/agent-lab/state/pi-agent/agents/planner.md
+128f7bcfb466c69ef31b8e891596b18301b6fb777230f7e96d9fd970c7cd4d5f  /mnt/d/agent-lab/state/pi-agent/agents/reviewer.md
+66bf81e7ca0a8d53eccbccd85794ee5ffb5275f793c87692f404da4ae75217f7  /mnt/d/agent-lab/state/pi-agent/agents/scout.md
+0ab36f64ecf5d9c2a1364c71c6bcbdf7d4a6c8869f78f8cc460f0b8057873860  /mnt/d/agent-lab/state/pi-agent/agents/worker.md

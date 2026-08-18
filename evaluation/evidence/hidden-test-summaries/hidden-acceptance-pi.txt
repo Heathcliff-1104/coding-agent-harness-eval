@@ -1,0 +1,11 @@
+CANDIDATE=pi
+COMMIT=4a59164c9eceae5ab2b6828b30cd4a5df4be72e5
+TREE=5a86e7f239cc98ecbd8ae3d9ee4d7e3b474882c9
+TEST_SHA256=bf43591caf6edbf1a43ef4368ecfdcb1f500caf52af2383cb6aab0bf209bb0f2
+STARTED=2026-08-18T17:45:00+08:00
+EXIT=0
+SECONDS=4442
+FINISHED=2026-08-18T18:59:02+08:00
+[[1;34mINFO[m] [1;32mTests run: [0;1;32m8[m, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 40.537 s - in com.koolearn.bms.acceptance.[1mExternalBehaviorAcceptanceTest[m
+[[1;34mINFO[m] [1;32mTests run: 8, Failures: 0, Errors: 0, Skipped: 0[m
+[[1;34mINFO[m] [1;32mBUILD SUCCESS[m

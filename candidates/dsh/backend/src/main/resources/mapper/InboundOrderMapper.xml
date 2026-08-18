@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.koolearn.bms.mapper.InboundOrderMapper">
+    <!-- 修复：补全 create_time / update_time / apply_time -->
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id">
+        insert into tb_inbound_order(
+            bill_no,in_type,return_reason,supplier,apply_user,apply_time,in_date,
+            remark,ding_instance_id,order_status,create_time,update_time
+        )
+        values(
+                  #{billNo},#{inType},#{returnReason},#{supplier},#{applyUser},#{applyTime},#{inDate},
+                  #{remark},#{dingInstanceId},#{orderStatus},#{createTime},#{updateTime}
+              )
+    </insert>
+
+    <!-- 修复 apply_User → apply_user -->
+    <select id="selectById" resultType="com.koolearn.bms.entity.InboundOrder">
+        select id,bill_no,in_type,return_reason,supplier,apply_user,apply_time,in_date,remark,
+               ding_instance_id,order_status,create_time,update_time
+        from tb_inbound_order
+        where id = #{id}
+    </select>
+
+    <!-- 修复 apply_User → apply_user -->
+    <select id="selectByDingInstanceId" resultType="com.koolearn.bms.entity.InboundOrder">
+        select id,bill_no,in_type,return_reason,supplier,apply_user,apply_time,in_date,remark,
+               ding_instance_id,order_status,create_time,update_time
+        from tb_inbound_order
+        where ding_instance_id = #{dingInstanceId}
+    </select>
+
+    <update id="updateOrderStatus">
+        update tb_inbound_order
+        set order_status = #{orderStatus}
+        where id = #{id}
+    </update>
+
+    <select id="selectOrderPage" resultType="com.koolearn.bms.entity.InboundOrder">
+        select * from tb_inbound_order
+        <where>
+            <if test="keyword != null and keyword != ''">
+                AND (bill_no LIKE CONCAT('%',#{keyword},'%') OR supplier LIKE CONCAT('%',#{keyword},'%') OR apply_user LIKE CONCAT('%',#{keyword},'%'))
+            </if>
+            <if test="billNo != null and billNo != ''">
+                AND bill_no LIKE CONCAT('%',#{billNo},'%')
+            </if>
+            <if test="supplier != null and supplier != ''">
+                AND supplier LIKE CONCAT('%',#{supplier},'%')
+            </if>
+            <if test="status != null">
+                AND order_status = #{status}
+            </if>
+            <if test="inType != null">
+                AND in_type = #{inType}
+            </if>
+            <if test="startDate != null and startDate != ''">
+                AND create_time &gt;= #{startDate}
+            </if>
+            <if test="endDate != null and endDate != ''">
+                AND create_time &lt;= CONCAT(#{endDate}, ' 23:59:59')
+            </if>
+            <if test="materialName != null and materialName != ''">
+                AND EXISTS (SELECT 1 FROM in_storage_item i WHERE i.inbound_id = tb_inbound_order.id
+                            AND i.material_name LIKE CONCAT('%', #{materialName}, '%'))
+            </if>
+        </where>
+        order by create_time desc
+    </select>
+</mapper>

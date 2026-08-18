@@ -1,0 +1,15 @@
+Develop this incomplete material management system toward the requirements in requirements/requirements.md.
+
+Work autonomously throughout the repository. Do not stop after fixing only one issue.
+
+At the beginning, inspect the requirements and current implementation, then use the native workflow and subagent facilities to delegate at least four independent investigations. Cover requirements completeness, backend and security, frontend and API integration, database/schema and core material flows, and build/test quality. Run independent investigations concurrently where useful, then verify and integrate their findings yourself. Do not merely produce an audit: implement as much correct, working behavior as is reasonably possible.
+
+Prioritize reproducible build failures, database/schema problems, authentication and authorization vulnerabilities, login and registration, inbound, outbound and inventory flows, frontend-backend API mismatches, missing validation, and automated tests. Then continue with reports, exports, permissions, backup, logs, alerts, BOM, CIS and DingTalk functionality according to the requirements.
+
+Internet access is allowed. You may install project-level dependencies when needed, but do not use sudo, install system packages, expose credentials, or access files outside the current repository except normal dependency caches. Do not inspect sibling worktrees, previous agent result directories, or outputs produced by other agents.
+
+For unavailable external services such as real DingTalk or CIS systems, implement configurable adapters and deterministic test or demo modes. Clearly document the limitation and do not claim that a live integration was verified.
+
+Run relevant backend tests, frontend builds, and other practical checks. Fix failures caused by your changes. Add automated regression tests where practical. Preserve existing useful behavior and requirements; do not weaken tests or rewrite requirements to match the implementation.
+
+Create coherent checkpoint Git commits as substantial groups of work are completed. Maintain IMPLEMENTATION_STATUS.md with completed items, remaining requirements, blockers, test commands, and actual results. Before finishing, review the complete Git diff, verify repository status, and accurately document anything that remains incomplete.

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.koolearn.bms.mapper.InRecordMapper">
+
+    <sql id="baseColumns">
+        r.id, r.bill_no AS billNo, r.material_id AS materialId, r.batch_no AS batchNo,
+        r.in_num AS inNum, r.in_user AS inUser, r.in_time AS inTime, r.create_time AS createTime,
+        m.material_code AS materialCode, m.material_name AS materialName, m.location_no AS locationNo
+    </sql>
+
+    <select id="selectByDate" resultType="com.koolearn.bms.entity.InRecord">
+        select <include refid="baseColumns"/>
+        from in_record r
+        left join tb_material m on r.material_id = m.id
+        where r.in_time &gt;= CONCAT(#{start}, ' 00:00:00')
+          and r.in_time &lt;= CONCAT(#{end}, ' 23:59:59')
+        order by r.in_time desc
+    </select>
+
+    <select id="selectPageByCondition" resultType="com.koolearn.bms.entity.InRecord">
+        select <include refid="baseColumns"/>
+        from in_record r
+        left join tb_material m on r.material_id = m.id
+        <where>
+            <if test="start != null and start != '' and end != null and end != ''">
+                AND r.in_time &gt;= CONCAT(#{start}, ' 00:00:00')
+                AND r.in_time &lt;= CONCAT(#{end}, ' 23:59:59')
+            </if>
+            <if test="billNo != null and billNo != ''">
+                AND r.bill_no LIKE CONCAT('%', #{billNo}, '%')
+            </if>
+            <if test="keyword != null and keyword != ''">
+                AND (
+                    r.bill_no LIKE CONCAT('%', #{keyword}, '%')
+                    OR r.batch_no LIKE CONCAT('%', #{keyword}, '%')
+                    OR m.material_code LIKE CONCAT('%', #{keyword}, '%')
+                    OR m.material_name LIKE CONCAT('%', #{keyword}, '%')
+                )
+            </if>
+        </where>
+        ORDER BY r.in_time DESC
+    </select>
+</mapper>

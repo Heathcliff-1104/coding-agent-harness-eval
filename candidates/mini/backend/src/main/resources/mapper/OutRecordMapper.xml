@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.koolearn.bms.mapper.OutRecordMapper">
+    <select id="selectPageByCondition" resultType="com.koolearn.bms.entity.OutRecord">
+        select r.id, r.outbound_code AS outboundCode, r.material_id AS materialId,
+               r.batch_no AS batchNo, r.out_num AS outNum, r.out_user AS outUser,
+               r.out_time AS outTime,
+               m.material_code AS materialCode, m.material_name AS materialName
+        from tb_out_record r
+        left join tb_material m on r.material_id = m.id
+        <where>
+            <if test="outboundCode != null and outboundCode != ''">
+                AND r.outbound_code LIKE CONCAT('%', #{outboundCode}, '%')
+            </if>
+            <if test="materialId != null">
+                AND r.material_id = #{materialId}
+            </if>
+            <if test="startTime != null and startTime != ''">
+                AND r.out_time &gt;= CONCAT(#{startTime}, ' 00:00:00')
+            </if>
+            <if test="endTime != null and endTime != ''">
+                AND r.out_time &lt;= CONCAT(#{endTime}, ' 23:59:59')
+            </if>
+            <if test="keyword != null and keyword != ''">
+                AND (
+                    r.outbound_code LIKE CONCAT('%', #{keyword}, '%')
+                    OR r.batch_no LIKE CONCAT('%', #{keyword}, '%')
+                    OR m.material_code LIKE CONCAT('%', #{keyword}, '%')
+                    OR m.material_name LIKE CONCAT('%', #{keyword}, '%')
+                )
+            </if>
+        </where>
+        ORDER BY r.out_time DESC
+    </select>
+</mapper>

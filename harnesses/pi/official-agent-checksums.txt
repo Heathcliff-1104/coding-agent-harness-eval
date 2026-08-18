@@ -1,0 +1,4 @@
+452f21f65957753cec3b0772004209c108071be168e627fffd7191234c0ce64e  /mnt/d/agent-lab/src/pi-v0.84.2/packages/coding-agent/examples/extensions/subagent/agents/planner.md
+b5c3f13b67207e8e32de631f8cd52a373d9b956028e2f8c1fd8b737b5f239265  /mnt/d/agent-lab/src/pi-v0.84.2/packages/coding-agent/examples/extensions/subagent/agents/reviewer.md
+3b84e8e01c6e05c8dfbff1c845c0c6371f4f16350735d4d1dbd02bfa98b1d4e6  /mnt/d/agent-lab/src/pi-v0.84.2/packages/coding-agent/examples/extensions/subagent/agents/scout.md
+ca2b2298fcbd8bfafcfe61977dc8075001a64b9c4d8c289c3b5eaa896efe6238  /mnt/d/agent-lab/src/pi-v0.84.2/packages/coding-agent/examples/extensions/subagent/agents/worker.md

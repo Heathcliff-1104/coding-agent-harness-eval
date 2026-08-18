@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.koolearn.bms.mapper.OutboundOrderMapper">
+
+
+
+
+    <update id="updateOrderStatus">
+        update tb_outbound_order
+        set order_status = #{orderStatus}
+        where id = #{id}
+    </update>
+
+    <update id="atomicConfirm">
+        update tb_outbound_order set order_status = 1 where id = #{id} and order_status = 0
+    </update>
+
+    <update id="atomicReject">
+        update tb_outbound_order set order_status = 2 where id = #{id} and order_status = 0
+    </update>
+
+    <update id="approveFromCallback">
+        update tb_outbound_order set order_status = 0 where id = #{id} and order_status = 0
+    </update>
+
+    <select id="selectByDingInstanceId" resultType="com.koolearn.bms.entity.OutboundOrder">
+        select * from tb_outbound_order where ding_instance_id = #{dingInstanceId}
+    </select>
+</mapper>

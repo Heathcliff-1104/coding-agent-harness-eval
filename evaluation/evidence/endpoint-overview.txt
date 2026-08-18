@@ -1,0 +1,685 @@
+================ baseline CONTROLLERS ================
+com/koolearn/bms/controller/BackupController.java
+com/koolearn/bms/controller/HealthController.java
+com/koolearn/bms/controller/InItemController.java
+com/koolearn/bms/controller/InRecordController.java
+com/koolearn/bms/controller/InboundOrderController.java
+com/koolearn/bms/controller/LoginController.java
+com/koolearn/bms/controller/LoginLogController.java
+com/koolearn/bms/controller/MaterialController.java
+com/koolearn/bms/controller/OutRecordController.java
+com/koolearn/bms/controller/OutboundOrderController.java
+com/koolearn/bms/controller/StatisticsController.java
+com/koolearn/bms/controller/StockAlertController.java
+com/koolearn/bms/controller/StockFlowController.java
+com/koolearn/bms/controller/SysLogController.java
+
+================ baseline ENDPOINT ANNOTATIONS ================
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/controller/SysLogController.java:14:@RequestMapping("/sysLog")
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/controller/SysLogController.java:23:    @GetMapping("/page")
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/controller/StockFlowController.java:18:@RequestMapping("/stockFlow")
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/controller/StockFlowController.java:29:    @GetMapping("/page")
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/controller/InboundOrderController.java:23:@RequestMapping("/inbound")
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/controller/InboundOrderController.java:35:    @PostMapping("/saveDraft")
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/controller/InboundOrderController.java:42:    @PostMapping("/confirm/{id}")
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/controller/InboundOrderController.java:48:    @PutMapping("/editDraft/{id}")
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/controller/InboundOrderController.java:54:    @GetMapping("/ding/{instanceId}")
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/controller/InboundOrderController.java:59:    @PostMapping("/updateStatus")
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/controller/InboundOrderController.java:64:    @GetMapping("/page")
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/controller/InboundOrderController.java:75:    @GetMapping("/get/{id}")
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/controller/InboundOrderController.java:80:    @PostMapping("/saveOrder")
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/controller/InboundOrderController.java:85:    @PostMapping("/dingtalk/callback")
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/controller/InboundOrderController.java:109:    @GetMapping("/export/{id}")
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/controller/OutRecordController.java:13:@RequestMapping("/outRecord")
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/controller/OutRecordController.java:22:    @GetMapping("/page")
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/controller/StatisticsController.java:16:@RequestMapping("/statistics")
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/controller/StatisticsController.java:25:    @GetMapping("/inbound")
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/controller/StatisticsController.java:32:    @GetMapping("/outbound")
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/controller/StatisticsController.java:39:    @GetMapping("/stagnant")
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/controller/StatisticsController.java:44:    @GetMapping("/exportInbound")
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/controller/StatisticsController.java:52:    @GetMapping("/exportOutbound")
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/controller/StatisticsController.java:60:    @GetMapping("/exportStagnant")
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/controller/StockAlertController.java:15:@RequestMapping("/stockAlert")
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/controller/StockAlertController.java:24:    @GetMapping("/page")
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/controller/StockAlertController.java:38:    @PostMapping("/handle/{id}")
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/controller/StockAlertController.java:51:    @PostMapping("/scan")
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/controller/HealthController.java:13:    @GetMapping("/health")
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/controller/LoginLogController.java:14:@RequestMapping("/loginLog")
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/controller/LoginLogController.java:23:    @GetMapping("/page")
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/controller/OutboundOrderController.java:23:@RequestMapping("/outbound")
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/controller/OutboundOrderController.java:35:    @PostMapping("/saveDraft")
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/controller/OutboundOrderController.java:41:    @PutMapping("/editDraft/{id}")
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/controller/OutboundOrderController.java:47:    @GetMapping("/get/{id}")
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/controller/OutboundOrderController.java:52:    @GetMapping("/page")
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/controller/OutboundOrderController.java:63:    @PostMapping("/saveOrder")
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/controller/OutboundOrderController.java:68:    @PostMapping("/dingtalk/callback")
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/controller/OutboundOrderController.java:93:    @PostMapping("/confirm/{id}")
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/controller/OutboundOrderController.java:99:    @PostMapping("/reject/{id}")
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/controller/OutboundOrderController.java:105:    @GetMapping("/export/{id}")
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/controller/BackupController.java:17:@RequestMapping("/backup")
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/controller/BackupController.java:38:    @PostMapping("/db")
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/controller/MaterialController.java:14:@RequestMapping("/material")
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/controller/MaterialController.java:23:    @GetMapping("/{id}")
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/controller/MaterialController.java:28:    @GetMapping("/list")
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/controller/MaterialController.java:33:    @GetMapping("/page")
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/controller/MaterialController.java:44:    @PostMapping("/add")
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/controller/MaterialController.java:50:    @PutMapping("/update")
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/controller/MaterialController.java:56:    @DeleteMapping("/del/{id}")
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/controller/InRecordController.java:11:@RequestMapping("/inRecord")
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/controller/InRecordController.java:20:    @GetMapping("/list")
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/controller/InRecordController.java:25:    @GetMapping("/page")
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:22:@RequestMapping("/user")
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:43:    @GetMapping("/captcha")
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:52:    @PostMapping("/login")
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:83:    @PostMapping("/register")
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:90:    @GetMapping("/info")
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:98:    @PutMapping("/changePwd")
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:115:    @GetMapping("/list")
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:123:    @GetMapping("/page")
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:139:    @PutMapping("/update")
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:149:    @DeleteMapping("/delete/{id}")
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:161:    @PostMapping("/resetPwd/{id}")
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:172:    @GetMapping("/dingtalk/auth-url")
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:180:    @PostMapping("/dingtalk/login")
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/controller/InItemController.java:10:@RequestMapping("/inItem")
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/controller/InItemController.java:19:    @GetMapping("/list/{inboundId}")
+
+================ baseline SECURITY / AUTH SYMBOLS ================
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/util/JwtUtil.java:4:import io.jsonwebtoken.Jwts;
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/util/JwtUtil.java:13:public class JwtUtil {
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/util/JwtUtil.java:15:    private static final String SECRET_STRING = System.getenv().getOrDefault("JWT_SECRET", "local-evaluation-jwt-secret-change-me-123456789");
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/util/JwtUtil.java:19:    public static String generate(Long userId, String username, String role) {
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/util/JwtUtil.java:21:        claims.put("userId", userId);
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/util/JwtUtil.java:24:        return Jwts.builder()
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/util/JwtUtil.java:33:        return Jwts.parserBuilder()
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:14:import com.koolearn.bms.util.JwtUtil;
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:68:            String token = JwtUtil.generate(user.getId(), user.getUsername(), user.getRole());
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:91:    public Result<User> info(@RequestAttribute(value = "userId", required = false) Long userId) {
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:92:        if (userId == null) return Result.fail("未登录");
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:93:        User user = userService.getById(userId);
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:99:    public Result<String> changePwd(@RequestAttribute("userId") Long userId,
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:102:        User user = userService.getById(userId);
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:186:            String token = JwtUtil.generate(user.getId(), user.getUsername(), user.getRole());
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/config/LoginInterceptor.java:3:import com.koolearn.bms.util.JwtUtil;
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/config/LoginInterceptor.java:19:        String token = request.getHeader("Authorization");
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/config/LoginInterceptor.java:27:            Claims claims = JwtUtil.parse(token);
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/config/LoginInterceptor.java:28:            request.setAttribute("userId", claims.get("userId"));
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/config/CorsConfig.java:30:    public void addInterceptors(InterceptorRegistry registry) {
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/config/CorsConfig.java:38:                .addPathPatterns("/**")
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/config/CorsConfig.java:39:                .excludePathPatterns(publicPaths);
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/config/CorsConfig.java:41:                .addPathPatterns("/**")
+/workspace/material-system/agent-eval/verification/run-01/baseline/backend/src/main/java/com/koolearn/bms/config/CorsConfig.java:42:                .excludePathPatterns(publicPaths);
+
+================ mini CONTROLLERS ================
+com/koolearn/bms/controller/BackupController.java
+com/koolearn/bms/controller/BomController.java
+com/koolearn/bms/controller/CisSyncController.java
+com/koolearn/bms/controller/HealthController.java
+com/koolearn/bms/controller/InItemController.java
+com/koolearn/bms/controller/InRecordController.java
+com/koolearn/bms/controller/InboundOrderController.java
+com/koolearn/bms/controller/LoginController.java
+com/koolearn/bms/controller/LoginLogController.java
+com/koolearn/bms/controller/MaterialController.java
+com/koolearn/bms/controller/OutRecordController.java
+com/koolearn/bms/controller/OutboundOrderController.java
+com/koolearn/bms/controller/RestockRequestController.java
+com/koolearn/bms/controller/RoleController.java
+com/koolearn/bms/controller/StatisticsController.java
+com/koolearn/bms/controller/StockAlertController.java
+com/koolearn/bms/controller/StockFlowController.java
+com/koolearn/bms/controller/SysLogController.java
+
+================ mini ENDPOINT ANNOTATIONS ================
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/SysLogController.java:23:@RequestMapping("/sysLog")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/SysLogController.java:35:    @GetMapping("/page")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/SysLogController.java:48:    @GetMapping("/export")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/SysLogController.java:80:    @GetMapping("/retention")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/SysLogController.java:85:    @PostMapping("/retention")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/LoginLogController.java:14:@RequestMapping("/loginLog")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/LoginLogController.java:23:    @GetMapping("/page")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/RestockRequestController.java:16:@RequestMapping("/restock")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/RestockRequestController.java:25:    @GetMapping("/page")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/RestockRequestController.java:37:    @PostMapping("/create")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/RestockRequestController.java:51:    @PostMapping("/handle/{id}")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/OutRecordController.java:19:@RequestMapping("/outRecord")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/OutRecordController.java:30:    @GetMapping("/page")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/OutRecordController.java:43:    @GetMapping("/export")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/StockFlowController.java:24:@RequestMapping("/stockFlow")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/StockFlowController.java:38:    @GetMapping("/page")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/StockFlowController.java:64:    @GetMapping("/export")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/OutboundOrderController.java:25:@RequestMapping("/outbound")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/OutboundOrderController.java:41:    @PostMapping("/saveDraft")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/OutboundOrderController.java:48:    @PutMapping("/editDraft/{id}")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/OutboundOrderController.java:54:    @GetMapping("/get/{id}")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/OutboundOrderController.java:59:    @GetMapping("/page")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/OutboundOrderController.java:71:    @PostMapping("/saveOrder")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/OutboundOrderController.java:76:    @PostMapping("/dingtalk/callback")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/OutboundOrderController.java:107:    @PostMapping("/confirm/{id}")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/OutboundOrderController.java:114:    @PostMapping("/reject/{id}")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/OutboundOrderController.java:120:    @GetMapping("/export/{id}")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:35:@RequestMapping("/user")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:64:    @GetMapping("/captcha")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:73:    @PostMapping("/login")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:105:    @PostMapping("/register")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:112:    @GetMapping("/info")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:120:    @PutMapping("/changePwd")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:137:    @GetMapping("/list")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:145:    @GetMapping("/page")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:161:    @PutMapping("/update")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:171:    @DeleteMapping("/delete/{id}")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:190:    @PostMapping("/resetPwd/{id}")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:201:    @GetMapping("/dingtalk/auth-url")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:209:    @PostMapping("/dingtalk/login")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:232:    @PostMapping("/admin/create")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:266:    @GetMapping("/export")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:297:    @PostMapping("/import")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/StockAlertController.java:15:@RequestMapping("/stockAlert")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/StockAlertController.java:24:    @GetMapping("/page")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/StockAlertController.java:38:    @PostMapping("/handle/{id}")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/StockAlertController.java:51:    @PostMapping("/scan")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/MaterialController.java:20:@RequestMapping("/material")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/MaterialController.java:29:    @GetMapping("/{id}")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/MaterialController.java:34:    @GetMapping("/list")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/MaterialController.java:39:    @GetMapping("/page")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/MaterialController.java:51:    @PostMapping("/add")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/MaterialController.java:57:    @PutMapping("/update")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/MaterialController.java:63:    @DeleteMapping("/del/{id}")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/MaterialController.java:69:    @PutMapping("/threshold")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/MaterialController.java:81:    @GetMapping("/export")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/InRecordController.java:18:@RequestMapping("/inRecord")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/InRecordController.java:27:    @GetMapping("/list")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/InRecordController.java:32:    @GetMapping("/page")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/InRecordController.java:42:    @GetMapping("/export")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/StatisticsController.java:16:@RequestMapping("/statistics")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/StatisticsController.java:25:    @GetMapping("/inbound")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/StatisticsController.java:32:    @GetMapping("/outbound")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/StatisticsController.java:39:    @GetMapping("/stagnant")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/StatisticsController.java:44:    @GetMapping("/inboundByMaterial")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/StatisticsController.java:51:    @GetMapping("/inboundBySupplier")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/StatisticsController.java:57:    @GetMapping("/outboundByMaterial")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/StatisticsController.java:64:    @GetMapping("/outboundByDept")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/StatisticsController.java:70:    @GetMapping("/exportInbound")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/StatisticsController.java:78:    @GetMapping("/exportOutbound")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/StatisticsController.java:86:    @GetMapping("/exportStagnant")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/RoleController.java:18:@RequestMapping("/role")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/RoleController.java:29:    @GetMapping("/list")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/RoleController.java:34:    @GetMapping("/menus")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/RoleController.java:41:    @PostMapping("/save")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/InItemController.java:10:@RequestMapping("/inItem")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/InItemController.java:19:    @GetMapping("/list/{inboundId}")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/CisSyncController.java:13:@RequestMapping("/cis")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/CisSyncController.java:25:    @PostMapping("/sync")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/CisSyncController.java:30:    @GetMapping("/logs")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/HealthController.java:13:    @GetMapping("/health")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/InboundOrderController.java:26:@RequestMapping("/inbound")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/InboundOrderController.java:42:    @PostMapping("/saveDraft")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/InboundOrderController.java:49:    @PostMapping("/confirm/{id}")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/InboundOrderController.java:56:    @PutMapping("/editDraft/{id}")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/InboundOrderController.java:62:    @GetMapping("/ding/{instanceId}")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/InboundOrderController.java:68:    @PostMapping("/updateStatus")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/InboundOrderController.java:73:    @GetMapping("/page")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/InboundOrderController.java:84:    @GetMapping("/get/{id}")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/InboundOrderController.java:90:    @PostMapping("/saveOrder")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/InboundOrderController.java:95:    @PostMapping("/dingtalk/callback")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/InboundOrderController.java:126:    @PostMapping("/confirmBatch")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/InboundOrderController.java:147:    @GetMapping("/export/{id}")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/BomController.java:16:@RequestMapping("/outbound/bom")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/BomController.java:26:    @PostMapping("/match")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/BomController.java:32:    @PostMapping("/import")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/BomController.java:39:    @PostMapping("/savePlan")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/BomController.java:45:    @GetMapping("/versions")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/BackupController.java:13:@RequestMapping("/backup")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/BackupController.java:24:    @PostMapping("/db")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/BackupController.java:29:    @GetMapping("/records")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/BackupController.java:35:    @GetMapping("/strategy")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/BackupController.java:44:    @PostMapping("/strategy")
+
+================ mini SECURITY / AUTH SYMBOLS ================
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/config/LoginInterceptor.java:6:import com.koolearn.bms.util.JwtUtil;
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/config/LoginInterceptor.java:17:    private final JwtUtil jwtUtil;
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/config/LoginInterceptor.java:20:    public LoginInterceptor(JwtUtil jwtUtil, UserMapper userMapper) {
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/config/LoginInterceptor.java:30:        String token = request.getHeader("Authorization");
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/config/LoginInterceptor.java:36:            Object userIdObj = claims.get("userId");
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/config/LoginInterceptor.java:37:            if (userIdObj == null) {
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/config/LoginInterceptor.java:40:            Long userId = Long.valueOf(userIdObj.toString());
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/config/LoginInterceptor.java:42:            User user = userMapper.selectOne(new LambdaQueryWrapper<User>().eq(User::getId, userId));
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/config/LoginInterceptor.java:49:            request.setAttribute("userId", user.getId());
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:15:import com.koolearn.bms.util.JwtUtil;
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:44:    private final JwtUtil jwtUtil;
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:51:                           JwtUtil jwtUtil, InboundOrderService inboundOrderService,
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:113:    public Result<User> info(@RequestAttribute(value = "userId", required = false) Long userId) {
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:114:        if (userId == null) return Result.fail("未登录");
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:115:        User user = userService.getById(userId);
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:121:    public Result<String> changePwd(@RequestAttribute("userId") Long userId,
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:124:        User user = userService.getById(userId);
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/util/JwtUtil.java:4:import io.jsonwebtoken.Jwts;
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/util/JwtUtil.java:18:public class JwtUtil {
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/util/JwtUtil.java:39:            throw new IllegalStateException("JWT_SECRET environment variable must be set to a strong random secret in production (bms.jwt.strict=true).");
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/util/JwtUtil.java:47:    public String generate(Long userId, String username, String role) {
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/util/JwtUtil.java:49:        claims.put("userId", userId);
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/util/JwtUtil.java:53:        return Jwts.builder()
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/util/JwtUtil.java:62:        return Jwts.parserBuilder()
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/config/CorsConfig.java:40:    public void addInterceptors(InterceptorRegistry registry) {
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/config/CorsConfig.java:48:                .addPathPatterns("/**")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/config/CorsConfig.java:49:                .excludePathPatterns(publicPaths);
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/config/CorsConfig.java:51:                .addPathPatterns("/**")
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/config/CorsConfig.java:52:                .excludePathPatterns(publicPaths);
+/workspace/material-system/agent-eval/verification/run-01/mini/backend/src/main/java/com/koolearn/bms/service/impl/CisSyncServiceImpl.java:80:                        .header("Authorization", token == null ? "" : token)
+
+================ dsh CONTROLLERS ================
+com/koolearn/bms/controller/BackupController.java
+com/koolearn/bms/controller/CisSyncController.java
+com/koolearn/bms/controller/HealthController.java
+com/koolearn/bms/controller/InItemController.java
+com/koolearn/bms/controller/InRecordController.java
+com/koolearn/bms/controller/InboundOrderController.java
+com/koolearn/bms/controller/LoginController.java
+com/koolearn/bms/controller/LoginLogController.java
+com/koolearn/bms/controller/MaterialController.java
+com/koolearn/bms/controller/OutRecordController.java
+com/koolearn/bms/controller/OutboundOrderController.java
+com/koolearn/bms/controller/RoleController.java
+com/koolearn/bms/controller/StatisticsController.java
+com/koolearn/bms/controller/StockAlertController.java
+com/koolearn/bms/controller/StockFlowController.java
+com/koolearn/bms/controller/SysLogController.java
+
+================ dsh ENDPOINT ANNOTATIONS ================
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/LoginLogController.java:20:@RequestMapping("/loginLog")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/LoginLogController.java:29:    @GetMapping("/page")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/LoginLogController.java:40:    @GetMapping("/export")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/SysLogController.java:20:@RequestMapping("/sysLog")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/SysLogController.java:29:    @GetMapping("/page")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/SysLogController.java:42:    @GetMapping("/export")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/RoleController.java:29:@RequestMapping("/role")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/RoleController.java:46:    @GetMapping("/list")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/RoleController.java:51:    @GetMapping("/page")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/RoleController.java:65:    @GetMapping("/permissionList")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/RoleController.java:71:    @GetMapping("/permissions/{roleCode}")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/RoleController.java:84:    @PostMapping("/save")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/RoleController.java:105:    @PostMapping("/updatePermissions")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/RoleController.java:133:    @DeleteMapping("/delete/{id}")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/InboundOrderController.java:28:@RequestMapping("/inbound")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/InboundOrderController.java:51:    @PostMapping("/saveDraft")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/InboundOrderController.java:59:    @PostMapping("/confirm/{id}")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/InboundOrderController.java:69:    @PutMapping("/editDraft/{id}")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/InboundOrderController.java:75:    @GetMapping("/ding/{instanceId}")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/InboundOrderController.java:80:    @PostMapping("/updateStatus")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/InboundOrderController.java:85:    @GetMapping("/page")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/InboundOrderController.java:103:    @PostMapping("/batchAudit")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/InboundOrderController.java:122:    @GetMapping("/get/{id}")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/InboundOrderController.java:127:    @PostMapping("/saveOrder")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/InboundOrderController.java:133:    @PostMapping("/dingtalk/pull")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/InboundOrderController.java:163:    @PostMapping("/dingtalk/callback")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/InboundOrderController.java:187:    @GetMapping("/export/{id}")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/HealthController.java:13:    @GetMapping("/health")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/OutboundOrderController.java:30:@RequestMapping("/outbound")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/OutboundOrderController.java:54:    @PostMapping("/bom/match")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/OutboundOrderController.java:63:    @PostMapping("/bom/import")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/OutboundOrderController.java:81:    @GetMapping("/bom/plan")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/OutboundOrderController.java:95:    @PostMapping("/saveDraft")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/OutboundOrderController.java:101:    @PutMapping("/editDraft/{id}")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/OutboundOrderController.java:107:    @GetMapping("/get/{id}")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/OutboundOrderController.java:112:    @GetMapping("/page")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/OutboundOrderController.java:125:    @PostMapping("/saveOrder")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/OutboundOrderController.java:131:    @PostMapping("/dingtalk/pull")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/OutboundOrderController.java:156:    @PostMapping("/dingtalk/callback")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/OutboundOrderController.java:183:    @PostMapping("/confirm/{id}")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/OutboundOrderController.java:195:    @PostMapping("/reject/{id}")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/OutboundOrderController.java:204:    @GetMapping("/export/{id}")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/StockFlowController.java:23:@RequestMapping("/stockFlow")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/StockFlowController.java:35:    @GetMapping("/page")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/StockFlowController.java:107:    @GetMapping("/export")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:31:@RequestMapping("/user")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:62:    @GetMapping("/check")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:77:    @GetMapping("/captcha")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:86:    @PostMapping("/login")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:125:    @PostMapping("/register")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:143:    @GetMapping("/info")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:156:    @PostMapping("/logout")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:162:    @PutMapping("/changePwd")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:181:    @GetMapping("/export")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:203:    @GetMapping("/list")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:211:    @GetMapping("/page")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:228:    @PostMapping("/add")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:246:    @PostMapping("/import")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:275:    @PutMapping("/update")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:297:    @DeleteMapping("/delete/{id}")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:319:    @PostMapping("/resetPwd/{id}")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:330:    @GetMapping("/dingtalk/auth-url")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:338:    @PostMapping("/dingtalk/login")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/BackupController.java:28:@RequestMapping("/backup")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/BackupController.java:62:    @PostMapping("/db")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/BackupController.java:136:    @GetMapping("/config")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/BackupController.java:147:    @PostMapping("/config")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/OutRecordController.java:20:@RequestMapping("/outRecord")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/OutRecordController.java:30:    @GetMapping("/page")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/OutRecordController.java:54:    @GetMapping("/export")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/InItemController.java:10:@RequestMapping("/inItem")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/InItemController.java:19:    @GetMapping("/list/{inboundId}")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/CisSyncController.java:20:@RequestMapping("/cis")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/CisSyncController.java:32:    @PostMapping("/sync/full")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/CisSyncController.java:40:    @PostMapping("/sync/incremental")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/CisSyncController.java:47:    @GetMapping("/sync/log")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/MaterialController.java:14:@RequestMapping("/material")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/MaterialController.java:23:    @GetMapping("/{id}")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/MaterialController.java:28:    @GetMapping("/list")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/MaterialController.java:33:    @GetMapping("/page")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/MaterialController.java:45:    @PostMapping("/add")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/MaterialController.java:51:    @PutMapping("/update")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/MaterialController.java:57:    @DeleteMapping("/del/{id}")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/StockAlertController.java:21:@RequestMapping("/stockAlert")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/StockAlertController.java:39:    @PostMapping("/purchaseRequest")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/StockAlertController.java:72:    @GetMapping("/page")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/StockAlertController.java:86:    @PostMapping("/handle/{id}")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/StockAlertController.java:99:    @PostMapping("/scan")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/InRecordController.java:17:@RequestMapping("/inRecord")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/InRecordController.java:27:    @GetMapping("/list")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/InRecordController.java:32:    @GetMapping("/page")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/InRecordController.java:42:    @GetMapping("/export")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/StatisticsController.java:24:@RequestMapping("/statistics")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/StatisticsController.java:39:    @GetMapping("/inbound")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/StatisticsController.java:46:    @GetMapping("/outbound")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/StatisticsController.java:68:    @GetMapping("/stagnant")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/StatisticsController.java:74:    @GetMapping("/inbound/material")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/StatisticsController.java:82:    @GetMapping("/inbound/supplier")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/StatisticsController.java:89:    @GetMapping("/outbound/material")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/StatisticsController.java:97:    @GetMapping("/outbound/dept")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/StatisticsController.java:103:    @GetMapping("/exportInbound")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/StatisticsController.java:113:    @GetMapping("/exportOutbound")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/StatisticsController.java:123:    @GetMapping("/exportStagnant")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/StatisticsController.java:133:    @GetMapping("/exportInventoryDetail")
+
+================ dsh SECURITY / AUTH SYMBOLS ================
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/config/LoginInterceptor.java:6:import com.koolearn.bms.util.JwtUtil;
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/config/LoginInterceptor.java:16: * 登录拦截器：JWT 仅用于身份凭证；每次请求从数据库重新校验用户状态、角色，
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/config/LoginInterceptor.java:23:    public static final String ATTR_USER_ID = "userId";
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/config/LoginInterceptor.java:26:    public static final String ATTR_PERMISSIONS = "permissions";
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/config/LoginInterceptor.java:30:    private final PermissionService permissionService;
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/config/LoginInterceptor.java:32:    public LoginInterceptor(UserMapper userMapper, PermissionService permissionService) {
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/config/LoginInterceptor.java:34:        this.permissionService = permissionService;
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/config/LoginInterceptor.java:42:        String token = request.getHeader("Authorization");
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/config/LoginInterceptor.java:48:            Claims claims = JwtUtil.parse(token);
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/config/LoginInterceptor.java:49:            Object userIdObj = claims.get("userId");
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/config/LoginInterceptor.java:50:            if (userIdObj == null) {
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/config/LoginInterceptor.java:54:            Long userId = Long.valueOf(userIdObj.toString());
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/config/LoginInterceptor.java:56:            User user = userMapper.selectById(userId);
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/config/LoginInterceptor.java:61:            Set<String> permissions = permissionService.loadPermissionCodes(userId);
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/config/LoginInterceptor.java:62:            String dataScope = permissionService.loadDataScope(userId);
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/config/LoginInterceptor.java:63:            request.setAttribute(ATTR_USER_ID, userId);
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/config/LoginInterceptor.java:66:            request.setAttribute(ATTR_PERMISSIONS, permissions);
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/entity/SysUserRole.java:13:    private Long userId;
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/config/CorsConfig.java:36:    public void addInterceptors(InterceptorRegistry registry) {
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/config/CorsConfig.java:44:                .addPathPatterns("/**")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/config/CorsConfig.java:45:                .excludePathPatterns(publicPaths);
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/config/CorsConfig.java:47:                .addPathPatterns("/**")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/config/CorsConfig.java:48:                .excludePathPatterns(publicPaths);
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/util/JwtUtil.java:4:import io.jsonwebtoken.Jwts;
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/util/JwtUtil.java:13:public class JwtUtil {
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/util/JwtUtil.java:15:    private static final String SECRET_STRING = System.getenv().getOrDefault("JWT_SECRET", "local-evaluation-jwt-secret-change-me-123456789");
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/util/JwtUtil.java:20:            System.err.println("[安全警告] JWT_SECRET 未设置，使用内置默认密钥！生产环境必须通过环境变量 JWT_SECRET 设置强随机密钥。");
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/util/JwtUtil.java:25:    public static String generate(Long userId, String username, String role) {
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/util/JwtUtil.java:27:        claims.put("userId", userId);
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/util/JwtUtil.java:30:        return Jwts.builder()
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/util/JwtUtil.java:39:        return Jwts.parserBuilder()
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/entity/SysRolePermission.java:9:@TableName("sys_role_permission")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/entity/SysRolePermission.java:14:    private Long permissionId;
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/service/PermissionService.java:11:    Set<String> loadPermissionCodes(Long userId);
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/service/PermissionService.java:14:    String loadDataScope(Long userId);
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/config/RoleInterceptor.java:49:            Set<String> permissions = (Set<String>) request.getAttribute(LoginInterceptor.ATTR_PERMISSIONS);
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/config/RoleInterceptor.java:50:            if (permissions == null || !permissions.contains(requiredPerm)) {
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/entity/SysPermission.java:8:@TableName("sys_permission")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/RoleController.java:33:    private final SysPermissionMapper permissionMapper;
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/RoleController.java:37:    public RoleController(SysRoleMapper roleMapper, SysPermissionMapper permissionMapper,
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/RoleController.java:41:        this.permissionMapper = permissionMapper;
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/RoleController.java:65:    @GetMapping("/permissionList")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/RoleController.java:66:    public Result<List<SysPermission>> permissionList() {
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/RoleController.java:67:        return Result.success(permissionMapper.selectList(new LambdaQueryWrapper<SysPermission>().orderByAsc(SysPermission::getSort)));
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/RoleController.java:71:    @GetMapping("/permissions/{roleCode}")
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/RoleController.java:79:        List<SysPermission> perms = permissionMapper.selectList(
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/RoleController.java:104:    /** 保存角色权限勾选：body = {roleCode, permissionCodes: [...]} */
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/RoleController.java:112:        List<String> codes = (List<String>) body.get("permissionCodes");
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/RoleController.java:120:            List<SysPermission> perms = permissionMapper.selectList(
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:20:import com.koolearn.bms.util.JwtUtil;
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:40:    private final PermissionService permissionService;
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:47:                           PermissionService permissionService,
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:56:        this.permissionService = permissionService;
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:104:            String token = JwtUtil.generate(user.getId(), user.getUsername(), user.getRole());
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:144:    public Result<Map<String, Object>> info(@RequestAttribute(value = "userId", required = false) Long userId) {
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:145:        if (userId == null) return Result.fail("未登录");
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:146:        User user = userService.getById(userId);
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:151:        data.put("permissions", permissionService.loadPermissionCodes(userId));
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:152:        data.put("dataScope", permissionService.loadDataScope(userId));
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:163:    public Result<String> changePwd(@RequestAttribute("userId") Long userId,
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:166:        User user = userService.getById(userId);
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:344:            String token = JwtUtil.generate(user.getId(), user.getUsername(), user.getRole());
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/controller/InboundOrderController.java:106:                                     @RequestAttribute("userId") Long userId,
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/service/impl/PermissionServiceImpl.java:21:    private final SysPermissionMapper permissionMapper;
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/service/impl/PermissionServiceImpl.java:26:                                 SysPermissionMapper permissionMapper) {
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/service/impl/PermissionServiceImpl.java:31:        this.permissionMapper = permissionMapper;
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/service/impl/PermissionServiceImpl.java:35:    public Set<String> loadPermissionCodes(Long userId) {
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/service/impl/PermissionServiceImpl.java:37:        User user = userMapper.selectById(userId);
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/service/impl/PermissionServiceImpl.java:42:        List<SysUserRole> extras = userRoleMapper.selectList(new LambdaQueryWrapper<SysUserRole>().eq(SysUserRole::getUserId, userId));
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/service/impl/PermissionServiceImpl.java:50:        List<SysPermission> perms = permissionMapper.selectList(
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/service/impl/PermissionServiceImpl.java:56:    public String loadDataScope(Long userId) {
+/workspace/material-system/agent-eval/verification/run-01/dsh/backend/src/main/java/com/koolearn/bms/service/impl/PermissionServiceImpl.java:57:        User user = userMapper.selectById(userId);
+
+================ pi CONTROLLERS ================
+com/koolearn/bms/controller/BackupController.java
+com/koolearn/bms/controller/BomController.java
+com/koolearn/bms/controller/CisController.java
+com/koolearn/bms/controller/HealthController.java
+com/koolearn/bms/controller/InItemController.java
+com/koolearn/bms/controller/InRecordController.java
+com/koolearn/bms/controller/InboundOrderController.java
+com/koolearn/bms/controller/LoginController.java
+com/koolearn/bms/controller/LoginLogController.java
+com/koolearn/bms/controller/MaterialController.java
+com/koolearn/bms/controller/OutRecordController.java
+com/koolearn/bms/controller/OutboundOrderController.java
+com/koolearn/bms/controller/ReplenishmentController.java
+com/koolearn/bms/controller/RoleController.java
+com/koolearn/bms/controller/StatisticsController.java
+com/koolearn/bms/controller/StockAlertController.java
+com/koolearn/bms/controller/StockFlowController.java
+com/koolearn/bms/controller/SysLogController.java
+
+================ pi ENDPOINT ANNOTATIONS ================
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/SysLogController.java:23:@RequestMapping("/sysLog")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/SysLogController.java:32:    @GetMapping("/page")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/SysLogController.java:45:    @GetMapping("/export")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/StockFlowController.java:22:@RequestMapping("/stockFlow")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/StockFlowController.java:31:    @GetMapping("/page")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/StockFlowController.java:45:    @GetMapping("/export")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/StockAlertController.java:15:@RequestMapping("/stockAlert")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/StockAlertController.java:25:    @GetMapping("/page")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/StockAlertController.java:39:    @PostMapping("/handle/{id}")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/StockAlertController.java:52:    @PostMapping("/scan")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/StatisticsController.java:24:@RequestMapping("/statistics")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/StatisticsController.java:33:    @GetMapping("/inbound")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/StatisticsController.java:40:    @GetMapping("/outbound")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/StatisticsController.java:47:    @GetMapping("/inboundBySupplier")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/StatisticsController.java:52:    @GetMapping("/outboundByDept")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/StatisticsController.java:57:    @GetMapping("/materialSummary")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/StatisticsController.java:62:    @GetMapping("/stagnant")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/StatisticsController.java:71:    @GetMapping("/exportInbound")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/StatisticsController.java:79:    @GetMapping("/exportOutbound")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/StatisticsController.java:87:    @GetMapping("/exportStagnant")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/StatisticsController.java:97:    @GetMapping("/exportInventory")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/InRecordController.java:21:@RequestMapping("/inRecord")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/InRecordController.java:35:    @GetMapping("/list")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/InRecordController.java:47:    @GetMapping("/page")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/InRecordController.java:61:    @GetMapping("/export")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/CisController.java:15:@RequestMapping("/cis")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/CisController.java:26:    @PostMapping("/sync/full")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/CisController.java:32:    @PostMapping("/sync/incremental")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/CisController.java:38:    @GetMapping("/sync/log/page")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/LoginLogController.java:23:@RequestMapping("/loginLog")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/LoginLogController.java:32:    @GetMapping("/page")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/LoginLogController.java:43:    @GetMapping("/export")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/OutboundOrderController.java:27:@RequestMapping("/outbound")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/OutboundOrderController.java:59:    @PostMapping("/saveDraft")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/OutboundOrderController.java:71:    @PutMapping("/editDraft/{id}")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/OutboundOrderController.java:86:    @GetMapping("/get/{id}")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/OutboundOrderController.java:99:    @GetMapping("/page")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/OutboundOrderController.java:114:    @PostMapping("/saveOrder")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/OutboundOrderController.java:127:    @PostMapping("/dingtalk/callback")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/OutboundOrderController.java:158:    @PostMapping("/confirm/{id}")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/OutboundOrderController.java:169:    @PostMapping("/reject/{id}")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/OutboundOrderController.java:186:    @GetMapping("/export/{id}")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/InItemController.java:10:@RequestMapping("/inItem")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/InItemController.java:19:    @GetMapping("/list/{inboundId}")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/InboundOrderController.java:27:@RequestMapping("/inbound")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/InboundOrderController.java:59:    @PostMapping("/saveDraft")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/InboundOrderController.java:66:    @PostMapping("/confirm/{id}")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/InboundOrderController.java:77:    @PutMapping("/editDraft/{id}")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/InboundOrderController.java:83:    @GetMapping("/ding/{instanceId}")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/InboundOrderController.java:97:    @GetMapping("/page")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/InboundOrderController.java:111:    @GetMapping("/get/{id}")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/InboundOrderController.java:125:    @PostMapping("/saveOrder")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/InboundOrderController.java:130:    @PostMapping("/dingtalk/callback")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/InboundOrderController.java:160:    @PostMapping("/batchConfirm")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/InboundOrderController.java:191:    @GetMapping("/export/{id}")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/MaterialController.java:15:@RequestMapping("/material")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/MaterialController.java:24:    @GetMapping("/{id}")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/MaterialController.java:29:    @GetMapping("/list")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/MaterialController.java:34:    @GetMapping("/page")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/MaterialController.java:45:    @PostMapping("/add")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/MaterialController.java:56:    @PutMapping("/update")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/MaterialController.java:74:    @DeleteMapping("/del/{id}")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/RoleController.java:17:@RequestMapping("/role")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/RoleController.java:30:    @GetMapping("/list")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/RoleController.java:35:    @GetMapping("/permission-tree")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/RoleController.java:40:    @GetMapping("/{id}/permissions")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/RoleController.java:45:    @PutMapping("/{id}/permissions")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/RoleController.java:66:    @PostMapping
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/RoleController.java:79:    @PutMapping("/{id}")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/RoleController.java:91:    @DeleteMapping("/{id}")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/HealthController.java:13:    @GetMapping("/health")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/BomController.java:41:@RequestMapping("/outbound/bom")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/BomController.java:60:    @PostMapping("/import")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/BomController.java:128:    @PostMapping("/match")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/BomController.java:133:    @PostMapping("/plan")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/BomController.java:198:    @GetMapping("/history")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/BomController.java:228:    @GetMapping("/history/{id}")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/OutRecordController.java:24:@RequestMapping("/outRecord")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/OutRecordController.java:50:    @GetMapping("/page")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/OutRecordController.java:66:    @GetMapping("/export")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:40:@RequestMapping("/user")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:74:    @GetMapping("/captcha")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:83:    @PostMapping("/login")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:118:    @PostMapping("/register")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:139:    @GetMapping("/checkUsername")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:146:    @GetMapping("/checkPhone")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:154:    @PostMapping("/add")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:178:    @GetMapping("/info")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:191:    @PutMapping("/changePwd")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:211:    @GetMapping("/list")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:219:    @GetMapping("/page")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:235:    @PutMapping("/update")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:249:    @DeleteMapping("/delete/{id}")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:272:    @PostMapping("/import")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:319:    @GetMapping("/export")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:354:    @PostMapping("/resetPwd/{id}")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:365:    @GetMapping("/dingtalk/auth-url")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:373:    @PostMapping("/dingtalk/login")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/BackupController.java:21:@RequestMapping("/backup")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/BackupController.java:39:    @PostMapping("/db")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/BackupController.java:47:    @GetMapping("/record/page")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/BackupController.java:55:    @GetMapping("/config")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/BackupController.java:60:    @PutMapping("/config")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/ReplenishmentController.java:19:@RequestMapping("/replenishment")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/ReplenishmentController.java:38:    @PostMapping("/apply")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/ReplenishmentController.java:60:    @GetMapping("/page")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/ReplenishmentController.java:72:    @PostMapping("/handle/{id}")
+
+================ pi SECURITY / AUTH SYMBOLS ================
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/config/LoginInterceptor.java:3:import com.koolearn.bms.util.JwtUtil;
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/config/LoginInterceptor.java:19:        String token = request.getHeader("Authorization");
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/config/LoginInterceptor.java:27:            Claims claims = JwtUtil.parse(token);
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/config/LoginInterceptor.java:28:            request.setAttribute("userId", claims.get("userId"));
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/mapper/UserMapper.java:15:    /** 通过用户ID查询其角色拥有的全部权限（忽略 JWT 角色声明，实时从 DB 读取） */
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/mapper/UserMapper.java:16:    @Select("SELECT DISTINCT p.* FROM sys_permission p "
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/mapper/UserMapper.java:17:            + "JOIN sys_role_permission rp ON p.id = rp.permission_id "
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/mapper/UserMapper.java:20:            + "WHERE u.id = #{userId}")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/mapper/UserMapper.java:21:    List<Permission> selectPermissionsByUserId(@Param("userId") Long userId);
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/mapper/UserMapper.java:24:    @Select("SELECT r.data_scope FROM sys_role r JOIN sys_user u ON u.role = r.role_code WHERE u.id = #{userId}")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/mapper/UserMapper.java:25:    String selectDataScopeByUserId(@Param("userId") Long userId);
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/config/DataInitializer.java:40:    private final PermissionMapper permissionMapper;
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/config/DataInitializer.java:46:                           PermissionMapper permissionMapper,
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/config/DataInitializer.java:52:        this.permissionMapper = permissionMapper;
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/config/DataInitializer.java:153:        Long cnt = permissionMapper.selectCount(new LambdaQueryWrapper<Permission>().eq(Permission::getPermCode, code));
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/config/DataInitializer.java:164:        permissionMapper.insert(p);
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/config/DataInitializer.java:220:            perms = permissionMapper.selectList(null);
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/config/DataInitializer.java:222:            perms = permissionMapper.selectList(new LambdaQueryWrapper<Permission>().in(Permission::getPermCode, includeCodes));
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/config/CorsConfig.java:30:    public void addInterceptors(InterceptorRegistry registry) {
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/config/CorsConfig.java:39:                .addPathPatterns("/**")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/config/CorsConfig.java:40:                .excludePathPatterns(publicPaths);
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/config/CorsConfig.java:42:                .addPathPatterns("/**")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/config/CorsConfig.java:43:                .excludePathPatterns(publicPaths);
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:21:import com.koolearn.bms.util.JwtUtil;
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:99:            String token = JwtUtil.generate(user.getId(), user.getUsername(), user.getRole());
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:179:    public Result<Map<String, Object>> info(@RequestAttribute(value = "userId", required = false) Long userId) {
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:180:        if (userId == null) return Result.fail("未登录");
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:181:        User user = userService.getById(userId);
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:186:        data.put("permissions", roleService.getPermissionsByUserId(userId));
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:187:        data.put("dataScope", roleService.getDataScopeByUserId(userId));
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:192:    public Result<String> changePwd(@RequestAttribute("userId") Long userId,
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:195:        User user = userService.getById(userId);
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/LoginController.java:379:            String token = JwtUtil.generate(user.getId(), user.getUsername(), user.getRole());
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/util/JwtUtil.java:4:import io.jsonwebtoken.Jwts;
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/util/JwtUtil.java:13:public class JwtUtil {
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/util/JwtUtil.java:23:     * 若设置了 JWT_SECRET 环境变量但长度 < 32 字节（HS256 最低要求），
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/util/JwtUtil.java:27:        String env = System.getenv("JWT_SECRET");
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/util/JwtUtil.java:31:                        "JWT_SECRET 环境变量长度不足 32 字节（HS256 要求密钥 ≥ 32 字节）。"
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/util/JwtUtil.java:32:                                + "请设置更长的 JWT_SECRET，或移除该环境变量以使用内置默认密钥。");
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/util/JwtUtil.java:39:    public static String generate(Long userId, String username, String role) {
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/util/JwtUtil.java:41:        claims.put("userId", userId);
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/util/JwtUtil.java:44:        return Jwts.builder()
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/util/JwtUtil.java:53:        return Jwts.parserBuilder()
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/config/RoleInterceptor.java:19: * - 每个请求根据 userId 从数据库读取最新角色（忽略 JWT 中的角色声明，防止权限变更后旧 token 越权）
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/config/RoleInterceptor.java:33:    /** userId -> (role, expireAt) */
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/config/RoleInterceptor.java:43:    public void evict(Long userId) {
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/config/RoleInterceptor.java:44:        roleCache.remove(userId);
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/config/RoleInterceptor.java:64:        Object userIdAttr = request.getAttribute("userId");
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/config/RoleInterceptor.java:65:        if (userIdAttr == null) {
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/config/RoleInterceptor.java:73:        Long userId = Long.valueOf(userIdAttr.toString());
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/config/RoleInterceptor.java:74:        String role = resolveRole(userId);
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/config/RoleInterceptor.java:88:    private String resolveRole(Long userId) {
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/config/RoleInterceptor.java:90:        Object[] cached = roleCache.get(userId);
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/config/RoleInterceptor.java:95:            roleCache.remove(userId);
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/config/RoleInterceptor.java:97:        User user = userMapper.selectById(userId);
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/config/RoleInterceptor.java:103:            roleCache.put(userId, new Object[]{role, now + cacheTtlMs});
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/service/RoleService.java:13:    List<Map<String, Object>> permissionTree();
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/service/RoleService.java:19:    void saveRolePermissions(Long roleId, List<Long> permissionIds, String dataScope);
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/service/RoleService.java:25:    List<String> getPermissionsByUserId(Long userId);
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/service/RoleService.java:28:    String getDataScopeByUserId(Long userId);
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/service/RoleService.java:31:    List<Permission> getPermissionListByUserId(Long userId);
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/entity/RolePermission.java:9:@TableName("sys_role_permission")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/entity/RolePermission.java:17:    private Long permissionId;
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/RoleController.java:35:    @GetMapping("/permission-tree")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/RoleController.java:36:    public Result<List<Map<String, Object>>> permissionTree() {
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/RoleController.java:37:        return Result.success(roleService.permissionTree());
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/RoleController.java:40:    @GetMapping("/{id}/permissions")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/RoleController.java:45:    @PutMapping("/{id}/permissions")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/RoleController.java:51:        List<Object> rawIds = (List<Object>) body.get("permissionIds");
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/RoleController.java:52:        List<Long> permissionIds = new java.util.ArrayList<>();
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/RoleController.java:55:                permissionIds.add(Long.valueOf(o.toString()));
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/controller/RoleController.java:59:        roleService.saveRolePermissions(id, permissionIds, dataScope);
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/entity/Permission.java:11:@TableName("sys_permission")
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/service/impl/RoleServiceImpl.java:27:    private final PermissionMapper permissionMapper;
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/service/impl/RoleServiceImpl.java:31:                           PermissionMapper permissionMapper,
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/service/impl/RoleServiceImpl.java:34:        this.permissionMapper = permissionMapper;
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/service/impl/RoleServiceImpl.java:39:    public List<Map<String, Object>> permissionTree() {
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/service/impl/RoleServiceImpl.java:40:        List<Permission> all = permissionMapper.selectList(new LambdaQueryWrapper<Permission>()
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/service/impl/RoleServiceImpl.java:89:    public void saveRolePermissions(Long roleId, List<Long> permissionIds, String dataScope) {
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/service/impl/RoleServiceImpl.java:94:        if (!CollectionUtils.isEmpty(permissionIds)) {
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/service/impl/RoleServiceImpl.java:95:            for (Long pid : permissionIds) {
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/service/impl/RoleServiceImpl.java:117:    public List<String> getPermissionsByUserId(Long userId) {
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/service/impl/RoleServiceImpl.java:118:        return userMapper.selectPermissionsByUserId(userId).stream()
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/service/impl/RoleServiceImpl.java:123:    public String getDataScopeByUserId(Long userId) {
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/service/impl/RoleServiceImpl.java:124:        String scope = userMapper.selectDataScopeByUserId(userId);
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/service/impl/RoleServiceImpl.java:129:    public List<Permission> getPermissionListByUserId(Long userId) {
+/workspace/material-system/agent-eval/verification/run-01/pi/backend/src/main/java/com/koolearn/bms/service/impl/RoleServiceImpl.java:130:        return userMapper.selectPermissionsByUserId(userId);
+

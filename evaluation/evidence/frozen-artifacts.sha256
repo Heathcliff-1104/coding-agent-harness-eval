@@ -1,0 +1,11 @@
+981a13a6fc27890531576afaf72db36b6d7c782d111b83c5941d0023a540aa47  /workspace/material-system/agent-eval/results/mini-full-run/mini-full-run.bundle
+58643f286239076a14cbe243f4b457b0e117267d115be7f3fa561cf8c21277bf  /workspace/material-system/agent-eval/results/mini-full-run/changes.patch
+54770ea3fdd818522fd199f31dde2fea70884436b15ea41710f46004a28f54ee  /workspace/material-system/agent-eval/results/mini-full-run/task.txt
+a2ddb67fad3ee63463b37d1a7bfedfb77de194ec429385617c5e629c3552fe6d  /workspace/material-system/agent-eval/results/mini-full-run/trajectory.json
+731ed5ddc0db5685a9d25a177d71cb754867102eefeba2e3898c1943be7648e1  /workspace/material-system/agent-eval/results/dsh-native-01/dsh-native-01.bundle
+a3feeda589fbc9ae9099bd0c947731110c178fd9a0c8e5141bc8d5bb1fd50d25  /workspace/material-system/agent-eval/results/dsh-native-01/changes.patch
+3d2ccfaf3b5def633b938a4bc84c5469b8d02b4aa5be99ede03e7a7d2e7139fb  /workspace/material-system/agent-eval/results/dsh-native-01/task.txt
+4f9983456e51170e9db5eb036bfaf1c494c34afd549bb1396271849a4f2227ea  /workspace/material-system/agent-eval/results/pi-native-01/pi-native-01.bundle
+6555a53aa8be870035bab5805383a838ca48a732aa293fb7f20cd0e3dd4cdb3b  /workspace/material-system/agent-eval/results/pi-native-01/changes.patch
+12f086c06306da3deea8cf80df1716846e74625c693faa15f32b7ae77f0b074e  /workspace/material-system/agent-eval/results/pi-native-01/task.txt
+93ff3d9f00bb23ef97ca9182bf2db2e02bb5e90844b11bfe41a7c183b90bd39e  /workspace/material-system/agent-eval/results/pi-native-01/trajectory.jsonl
